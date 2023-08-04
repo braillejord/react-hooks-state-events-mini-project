@@ -3,8 +3,8 @@ import Task from "./Task";
 
 
 
-function TaskList({ tasks, selectedCategory }) {
-  const [tasksArray, setTasksArray] = useState(tasks)
+function TaskList({ tasksArray, setTasksArray, selectedCategory }) {
+  // const [tasksArray, setTasksArray] = useState(tasks)
 
   function handleClick(id) {
     const updatedTasks = tasksArray.filter((task) => {
