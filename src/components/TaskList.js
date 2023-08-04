@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Task from "./Task";
 
 
+
 function TaskList({ tasks, selectedCategory }) {
   const [tasksArray, setTasksArray] = useState(tasks)
-  console.log(selectedCategory)
 
   function handleClick(id) {
     const updatedTasks = tasksArray.filter((task) => {
@@ -15,7 +15,7 @@ function TaskList({ tasks, selectedCategory }) {
     setTasksArray(updatedTasks)
   }
 
-  const taskToDisplay = tasks
+  const tasksToDisplay = tasksArray
     .filter((task) => {
       if (selectedCategory === "All") {
         return true;
@@ -26,7 +26,7 @@ function TaskList({ tasks, selectedCategory }) {
 
   return (
     <div className="tasks">
-      {taskToDisplay.map((task) => (
+      {tasksToDisplay.map((task) => (
         <Task key={task.text} text={task.text} category={task.category} handleClick={handleClick} />
       ))
       }
