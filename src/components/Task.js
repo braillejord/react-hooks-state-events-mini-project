@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-function Task({ text, category }) {
+function Task({ text, category, handleClick }) {
   return (
     <div className="task">
       <div className="label">{category}</div>
       <div className="text">{text}</div>
-      <button className="delete">X</button>
+      <button className="delete" onClick={() => handleClick(text)}>X</button>
     </div>
   );
 }
